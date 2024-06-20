@@ -9,3 +9,23 @@ body {
 	background-position: center;
 }
 
+
+/* Custom Scrollbar Styles with !important */
+::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: #555 !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #121212 !important;
+    border-radius: 5px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #242424 !important;
+}
+
+

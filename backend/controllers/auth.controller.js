@@ -34,19 +34,19 @@ export const signup = async (req, res) => {
             generateTokenAndSetCookie(newUser._id, res);
             await newUser.save();
 
-            res.status(201).json({
+            return res.status(201).json({
                 _id: newUser._id,
                 fullName: newUser.fullName,
                 username: newUser.username,
                 profilePicture: newUser.profilePicture,
             });
         } else {
-            res.status(400).json({error: "Invalid user data"});
+            return res.status(400).json({error: "Invalid user data"});
         }
 
     }catch (error) {
         console.log("Error in signup controller", error.message);
-        res.status(500).json({error:"Internal Server Error"});
+        return res.status(500).json({error:"Internal Server Error"});
     }
 }
 
